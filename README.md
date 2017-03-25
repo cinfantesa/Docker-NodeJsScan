@@ -2,11 +2,11 @@
 Docker alpine container for NodeJsScan
 
 #### Starting container
-Just run
 
 ```
-docker run -p 9090:9090 cinfantes/docker-nodejsscan
+docker run -p 9090:9090 cinfantes/nodejsscan
 ```
+
 
 Open [http://localhost:9090](http://localhost:9090)
 
