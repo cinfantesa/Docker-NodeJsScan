@@ -19,7 +19,6 @@ RUN cd /usr/src \
  && sed -i -e s/postgresql:\\/\\/localhost\\/nodejsscan/postgresql:\\/\\/127.0.0.1\\/nodejsscan/g core/settings.py \
  && pip install virtualenv \
  && pip install -r requirements.txt \
- && pip install supervisor \
  && rm -rf /var/cache/apk/*
 
 
