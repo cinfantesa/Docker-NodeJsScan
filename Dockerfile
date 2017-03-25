@@ -17,10 +17,11 @@ RUN cd /usr/src \
  && git clone https://github.com/ajinabraham/NodeJsScan.git \
  && cd NodeJsScan \
  && sed -i -e s/postgresql:\\/\\/localhost\\/nodejsscan/postgresql:\\/\\/127.0.0.1\\/nodejsscan/g core/settings.py \
- && pip install virtualenv \
  && pip install -r requirements.txt \
+ && apk del python-dev \
+    build-base \
+    git \
  && rm -rf /var/cache/apk/*
-
 
 ADD start.sh /usr/src/NodeJsScan
 WORKDIR /usr/src/NodeJsScan
