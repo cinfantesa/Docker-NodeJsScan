@@ -8,7 +8,7 @@ ENV POSTGRES_USER root
 ENV POSTGRES_DB nodejsscan
 
 RUN cd /usr/src \
- && apk add --update \
+ && apk --no-cache add --update \
     python \
     python-dev \
     py-pip \
@@ -20,8 +20,9 @@ RUN cd /usr/src \
  && pip install -r requirements.txt \
  && apk del python-dev \
     build-base \
-    git \
- && rm -rf /var/cache/apk/*
+    git
+#    \
+# && rm -rf /var/cache/apk/*
 
 ADD start.sh /usr/src/NodeJsScan
 WORKDIR /usr/src/NodeJsScan
